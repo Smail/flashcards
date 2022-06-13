@@ -117,6 +117,14 @@ h6 {
   margin: 0;
 }
 
+ol,
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .flex-column-start {
   display: flex;
   flex-direction: column;
