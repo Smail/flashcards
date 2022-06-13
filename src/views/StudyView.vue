@@ -4,7 +4,7 @@
   <ul class="flex-column-start">
     <li v-for="deck in this.$store.state.decks">
       <router-link
-        class="study-deck-link"
+        class="study-deck-link translate-all-03s"
         :to="{ name: 'study-deck', params: { name: deck.name } }"
       >
         <h4>{{ deck.name }}</h4>
@@ -26,8 +26,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  align-self: stretch;
   padding: 0;
-  width: 100%;
   gap: 0.5em;
 }
 
