@@ -64,7 +64,7 @@ body {
 
 .component {
   margin: 0.5em;
-  padding: 1.5em 2em;
+  padding: 1em;
   border-radius: 0.5em;
   background-color: rgba(255, 255, 255, 0.07);
 }
@@ -87,7 +87,7 @@ body {
   display: flex;
 }
 
-nav {
+nav.component {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
