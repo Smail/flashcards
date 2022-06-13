@@ -1,14 +1,30 @@
 <template>
   <nav class="component">
-    <router-link to="/">Home</router-link>
-    <router-link to="/study">Study</router-link>
-    <router-link to="/browse">Browse</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link v-for="nav in navLinks" :to="nav.href"
+      >{{ nav.title }}
+    </router-link>
   </nav>
   <div id="content" class="component flex-column-start">
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+  components: {},
+  data() {
+    return {
+      navLinks: [
+        { title: "Home", href: "/" },
+        { title: "Study", href: "/study" },
+        { title: "Browse", href: "/browse" },
+        { title: "About", href: "/about" },
+      ],
+    };
+  },
+};
+</script>
 
 <style>
 /* TODO GDPR - download font locally */
