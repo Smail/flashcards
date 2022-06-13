@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
-    <h1>{{ this.$store.state.firstName }} {{ this.$store.state.lastName }}</h1>
-    <div class="statistic"></div>
-  </div>
+  <h1>{{ this.$store.state.firstName }} {{ this.$store.state.lastName }}</h1>
+  <div class="statistic"></div>
 </template>
 
 <script>
@@ -13,12 +11,6 @@ export default {
 </script>
 
 <style>
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .statistic {
   background-color: var(--apple-gray-5-dark);
 }

@@ -5,7 +5,7 @@
     <router-link to="/browse">Browse</router-link>
     <router-link to="/about">About</router-link>
   </nav>
-  <div id="content" class="component">
+  <div id="content" class="component flex-column-start">
     <router-view />
   </div>
 </template>
@@ -89,5 +89,16 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.small-italic-header {
+  font-weight: normal;
+  font-style: italic;
 }
 </style>

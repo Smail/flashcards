@@ -1,10 +1,8 @@
 <template>
-  <div class="browse">
-    <h1>Browse</h1>
-    <!-- Display current deck name -->
-    <h6 id="current-deck-header">{{ this.currentDeck }}</h6>
-    <div></div>
-  </div>
+  <h1>Browse</h1>
+  <!-- Display current deck name -->
+  <h6 class="small-italic-header">{{ this.currentDeck }}</h6>
+  <div></div>
 </template>
 
 <script>
@@ -18,21 +16,8 @@ export default {
         (deck) => deck.id === currentDeckId
       );
 
-      return currentDeck;
+      return currentDeck != null ? currentDeck.name : "No deck selected";
     },
   },
 };
 </script>
-
-<style>
-.browse {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-#current-deck-header {
-  font-weight: normal;
-  font-style: italic;
-}
-</style>
