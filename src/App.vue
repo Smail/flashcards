@@ -5,7 +5,9 @@
     <router-link to="/decks">Decks</router-link>
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view />
+  <div id="content" class="component">
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -42,6 +44,7 @@ body {
   margin: 0.5em;
   padding: 1.5em 2em;
   border-radius: 0.5em;
+  background-color: var(--apple-gray-5-dark);
 }
 
 #app {
@@ -57,15 +60,15 @@ body {
 }
 
 /* Use full width on first component, that is not nav, i.e., make nav a slim component. */
-#app > :nth-child(2) {
+#content {
   flex: 1;
+  display: flex;
 }
 
 nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--apple-gray-5-dark);
   gap: 0.5em;
 }
 
@@ -77,5 +80,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: var(--primary-color);
+}
+
+h1 {
+  margin: 0;
 }
 </style>

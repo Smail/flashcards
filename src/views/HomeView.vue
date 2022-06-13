@@ -1,5 +1,5 @@
 <template>
-  <div class="home component">
+  <div class="home">
     <h1>{{ this.$store.state.firstName }} {{ this.$store.state.lastName }}</h1>
     <div class="statistic"></div>
   </div>
@@ -12,9 +12,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .home {
-  background-color: var(--apple-gray-5-dark);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -22,9 +21,5 @@ export default {
 
 .statistic {
   background-color: var(--apple-gray-5-dark);
-}
-
-h1 {
-  margin: 0;
 }
 </style>
