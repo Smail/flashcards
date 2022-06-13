@@ -127,6 +127,7 @@ ul {
 
 .flex-column-start {
   display: flex;
+  gap: 0.5em;
   flex-direction: column;
   align-items: flex-start;
 }
