@@ -1,6 +1,9 @@
 <template>
   <nav class="component">
-    <router-link v-for="nav in navLinks" :to="nav.href"
+    <router-link
+      v-for="nav in navLinks"
+      :to="nav.href"
+      class="translate-all-03s hover-tranform-animation"
       >{{ nav.title }}
     </router-link>
   </nav>
