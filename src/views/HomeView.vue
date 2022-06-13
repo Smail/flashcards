@@ -17,6 +17,7 @@ export default {
   background-color: var(--apple-gray-5-dark);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .statistic {

@@ -56,6 +56,11 @@ body {
   height: 100vh;
 }
 
+/* Use full width on first component, that is not nav, i.e., make nav a slim component. */
+#app > :nth-child(2) {
+  flex: 1;
+}
+
 nav {
   display: flex;
   flex-direction: column;
