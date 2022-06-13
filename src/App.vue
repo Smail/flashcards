@@ -18,7 +18,7 @@
   --apple-gray-6-dark: rgb(28, 28, 30);
   --apple-blue-dark: rgb(10, 132, 255);
   --apple-red-dark: rgb(255, 69, 58);
-  --apple-pink-dark: rgb(255, 69, 58);
+  --apple-pink-dark: rgb(255, 55, 95);
   --font-color: white;
 }
 
