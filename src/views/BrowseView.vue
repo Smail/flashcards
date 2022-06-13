@@ -1,6 +1,6 @@
 <template>
-  <div class="cards">
-    <h1>Cards</h1>
+  <div class="browse">
+    <h1>Browse</h1>
     <!-- Display current deck name -->
     <h6 id="current-deck-header">{{ this.currentDeck }}</h6>
     <div></div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "CardsView",
+  name: "BrowseView",
   components: {},
   computed: {
     currentDeck() {

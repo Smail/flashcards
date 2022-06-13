@@ -2,7 +2,7 @@
   <nav class="component">
     <router-link to="/">Home</router-link>
     <router-link to="/study">Study</router-link>
-    <router-link to="/cards">Cards</router-link>
+    <router-link to="/browse">Browse</router-link>
     <router-link to="/about">About</router-link>
   </nav>
   <div id="content" class="component">
