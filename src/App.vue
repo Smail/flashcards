@@ -85,6 +85,10 @@ a.router-link-exact-active {
   color: var(--primary-color);
 }
 
+a:hover {
+  color: var(--primary-color);
+}
+
 h1,
 h2,
 h3,
@@ -103,5 +107,13 @@ h6 {
 .small-italic-header {
   font-weight: normal;
   font-style: italic;
+}
+
+.translate-all-03s {
+  transition: all 0.3s ease 0s;
+}
+
+.hover-tranform-animation:hover {
+  transform: translateY(-0.25em);
 }
 </style>
