@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
   </nav>
   <router-view />
@@ -12,6 +12,7 @@
 
 :root {
   /* https://developer.apple.com/design/human-interface-guidelines/foundations/color/#specifications */
+  --apple-gray-5-dark: rgb(44, 44, 46);
   --apple-gray-6-dark: rgb(28, 28, 30);
   --apple-blue-dark: rgb(10, 132, 255);
   --apple-red-dark: rgb(255, 69, 58);
@@ -35,16 +36,25 @@ body {
   font-family: Poppins, Helvetica, Arial, sans-serif;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+
+  height: 100vh;
 }
 
 nav {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--apple-gray-5-dark);
+  border-radius: 0.5em;
+  margin: 0.5em;
 }
 
 nav a {
   font-weight: bold;
-  color: var(--apple-red-dark);
+  color: var(--font-color);
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
