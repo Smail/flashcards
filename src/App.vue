@@ -21,6 +21,12 @@
   --apple-blue-dark: rgb(10, 132, 255);
   --apple-pink-dark: rgb(255, 55, 95);
   --font-color: white;
+
+  --primary-color: var(--apple-pink-dark);
+}
+
+::selection {
+  background-color: var(--primary-color);
 }
 
 body {
@@ -65,6 +71,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: var(--apple-pink-dark);
+  color: var(--primary-color);
 }
 </style>
