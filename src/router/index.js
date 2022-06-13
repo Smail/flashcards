@@ -18,6 +18,31 @@ const routes = [
       import(/* webpackChunkName: "study" */ "../views/StudyView.vue"),
   },
   {
+    path: "/create",
+    name: "create",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "create" */ "../views/CreateView.vue"),
+  },
+  {
+    path: "/create/flashcard",
+    name: "create-flashcard",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/CreateView.vue"),
+  },
+  {
+    path: "/create/deck",
+    name: "create-deck",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/CreateView.vue"),
+  },
+  {
     path: "/browse",
     name: "browse",
     // route level code-splitting

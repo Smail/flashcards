@@ -20,8 +20,9 @@ export default {
     return {
       navLinks: [
         { title: "Home", href: "/" },
-        { title: "Study", href: "/study" },
+        { title: "Create", href: "/create" },
         { title: "Browse", href: "/browse" },
+        { title: "Study", href: "/study" },
         { title: "About", href: "/about" },
       ],
     };
