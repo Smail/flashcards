@@ -25,6 +25,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
   },
   "eslintConfig": {
@@ -47,5 +48,8 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
 }
