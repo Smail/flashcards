@@ -1,6 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link>
+    <router-link to="/study">Study</router-link>
     <router-link to="/about">About</router-link>
   </nav>
   <router-view />
@@ -49,6 +50,7 @@ nav {
   background-color: var(--apple-gray-5-dark);
   border-radius: 0.5em;
   margin: 0.5em;
+  gap: 0.5em;
 }
 
 nav a {
