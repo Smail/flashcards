@@ -4,6 +4,8 @@ export default createStore({
   state: {
     firstName: "Max",
     lastName: "Mustermann",
+    decks: [],
+    currentDeckId: undefined,
   },
   getters: {},
   mutations: {},
