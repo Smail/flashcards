@@ -9,9 +9,3 @@ export default {
   components: {},
 };
 </script>
-
-<style>
-.statistic {
-  background-color: var(--apple-gray-5-dark);
-}
-</style>

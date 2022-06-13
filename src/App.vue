@@ -47,7 +47,7 @@ body {
   margin: 0.5em;
   padding: 1.5em 2em;
   border-radius: 0.5em;
-  background-color: var(--apple-gray-5-dark);
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
 #app {
