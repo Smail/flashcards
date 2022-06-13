@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style>
-.cards {
+.browse {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
