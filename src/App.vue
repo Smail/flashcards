@@ -16,15 +16,18 @@
 
 :root {
   /* https://developer.apple.com/design/human-interface-guidelines/foundations/color/#specifications */
+  --apple-gray-4-dark: rgb(58, 58, 60);
   --apple-gray-5-dark: rgb(44, 44, 46);
   --apple-gray-6-dark: rgb(28, 28, 30);
   --apple-red-dark: rgb(255, 69, 58);
+  --apple-orange-dark: rgb(255, 159, 10);
   --apple-green-dark: rgb(48, 209, 88);
   --apple-blue-dark: rgb(10, 132, 255);
   --apple-pink-dark: rgb(255, 55, 95);
   --font-color: white;
 
   --primary-color: var(--apple-pink-dark);
+  --secondary-color: var(--apple-orange-dark);
 }
 
 ::selection {
@@ -72,13 +75,13 @@ nav {
   gap: 0.5em;
 }
 
-nav a {
+a {
+  text-decoration: none;
   font-weight: bold;
   color: var(--font-color);
-  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
+a.router-link-exact-active {
   color: var(--primary-color);
 }
 
