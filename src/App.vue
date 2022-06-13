@@ -16,8 +16,9 @@
   /* https://developer.apple.com/design/human-interface-guidelines/foundations/color/#specifications */
   --apple-gray-5-dark: rgb(44, 44, 46);
   --apple-gray-6-dark: rgb(28, 28, 30);
-  --apple-blue-dark: rgb(10, 132, 255);
   --apple-red-dark: rgb(255, 69, 58);
+  --apple-green-dark: rgb(48, 209, 88);
+  --apple-blue-dark: rgb(10, 132, 255);
   --apple-pink-dark: rgb(255, 55, 95);
   --font-color: white;
 }
