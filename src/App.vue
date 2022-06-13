@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="component">
     <router-link to="/">Home</router-link>
     <router-link to="/study">Study</router-link>
     <router-link to="/decks">Decks</router-link>
@@ -32,6 +32,12 @@ body {
   background-color: var(--apple-gray-6-dark);
 }
 
+.component {
+  margin: 0.5em;
+  padding: 1.5em 2em;
+  border-radius: 0.5em;
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,13 +51,10 @@ body {
 }
 
 nav {
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--apple-gray-5-dark);
-  border-radius: 0.5em;
-  margin: 0.5em;
   gap: 0.5em;
 }
 
