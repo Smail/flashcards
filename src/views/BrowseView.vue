@@ -1,8 +1,58 @@
 <template>
   <h1>Browse</h1>
-  <!-- Display current deck name -->
-  <h6 class="small-italic-header">{{ this.currentDeck }}</h6>
-  <div></div>
+  <div id="browser-wrapper" class="component">
+    <!-- Only show the navbar if the user has any decks -->
+    <template v-if="hasDecks">
+      <ul id="deck-nav" class="component">
+        <li v-for="deck in this.$store.state.decks">
+          <router-link
+            class="translate-all-03s"
+            :to="{ name: 'browse', params: { id: deck.id } }"
+          >
+            <h4>{{ deck.name }}</h4>
+          </router-link>
+        </li>
+      </ul>
+      <div v-if="currentDeck != null" class="component deck-browser">
+        <template v-if="currentCard != null">
+          <div class="card component">
+            <h4>Front</h4>
+            <textarea>{{ currentCard.front }}</textarea>
+          </div>
+          <div class="card component">
+            <h4>Back</h4>
+            <textarea>{{ currentCard.back }}</textarea>
+          </div>
+        </template>
+        <h4
+          v-else-if="
+            currentDeck.cards == null || currentDeck.cards.length === 0
+          "
+        >
+          The selected deck is currently empty. {{ currentDeck.name }}
+        </h4>
+        <h4 v-else>⚠️ Unknown Error.</h4>
+      </div>
+    </template>
+    <div
+      v-else
+      style="
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <h4>Oops... You don't have any decks yet 🤷</h4>
+      <router-link
+        to="/create"
+        class="component translate-all-03s hover-tranform-animation"
+      >
+        Create one here
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -11,13 +61,87 @@ export default {
   components: {},
   computed: {
     currentDeck() {
-      const currentDeckId = this.$store.state.currentDeckId;
-      const currentDeck = this.$store.state.decks.find(
-        (deck) => deck.id === currentDeckId
-      );
+      const decks = this.$store.state.decks;
+      let id = this.$route.params.id;
 
-      return currentDeck != null ? currentDeck.name : "No deck selected";
+      // Return the deck requested by the route parameter, i.e., URL
+      // or the first available deck if no specific deck was requested.
+      if (id != null) {
+        id = Number.parseInt(this.$route.params.id);
+        return decks.find((deck) => deck.id === id);
+      } else {
+        // Get first available deck
+        if (decks != null && decks.length > 0) {
+          return decks[0];
+        }
+      }
+
+      return null;
+    },
+    currentCard() {
+      // TODO dont select automatically the first deck card...
+      if (
+        this.currentDeck != null &&
+        this.currentDeck.cards != null &&
+        this.currentDeck.cards.length > 0
+      ) {
+        return this.currentDeck.cards[0];
+      }
+      return null;
+    },
+    hasDecks() {
+      return (
+        this.$store.state.decks != null && this.$store.state.decks.length > 0
+      );
     },
   },
 };
 </script>
+
+<style>
+#browser-wrapper {
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+#deck-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.deck-browser {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.card {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Remove double margin */
+.component.card {
+  margin: 0;
+}
+
+textarea {
+  color: inherit;
+  flex: 1;
+  align-self: stretch;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  margin-top: 0.5em;
+}
+</style>
