@@ -44,10 +44,34 @@ export default {
   --apple-green-dark: rgb(48, 209, 88);
   --apple-blue-dark: rgb(10, 132, 255);
   --apple-pink-dark: rgb(255, 55, 95);
-  --font-color: white;
+}
 
-  --primary-color: var(--apple-pink-dark);
-  --secondary-color: var(--apple-orange-dark);
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-color: black;
+
+    --primary-color: var(--apple-blue-dark);
+    --secondary-color: var(--apple-green-dark);
+    --background-color: white;
+  }
+
+  .component {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-color: white;
+
+    --primary-color: var(--apple-pink-dark);
+    --secondary-color: var(--apple-orange-dark);
+    --background-color: var(--apple-gray-6-dark);
+  }
+
+  .component {
+    background-color: rgba(255, 255, 255, 0.07);
+  }
 }
 
 ::selection {
@@ -60,14 +84,13 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   color: var(--font-color);
-  background-color: var(--apple-gray-6-dark);
+  background-color: var(--background-color);
 }
 
 .component {
   margin: 0.5em;
   padding: 1em;
   border-radius: 0.5em;
-  background-color: rgba(255, 255, 255, 0.07);
 }
 
 #app {
