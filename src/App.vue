@@ -145,4 +145,8 @@ ul {
 .hover-tranform-animation:hover {
   transform: translateY(-0.25em);
 }
+
+math-field {
+  outline: none;
+}
 </style>

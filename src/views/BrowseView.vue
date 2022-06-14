@@ -21,7 +21,11 @@
           </div>
           <div class="card component">
             <h4>Back</h4>
-            <textarea>{{ currentCard.back }}</textarea>
+            <div id="test">Hallo $x = 1$</div>
+            <textarea id="textarea-back">{{ currentCard.back }}</textarea>
+          </div>
+          <div class="card component">
+            <math-field>f(x) = x + 1</math-field>
           </div>
         </template>
         <h4
@@ -90,9 +94,21 @@ export default {
       return null;
     },
     hasDecks() {
+      console.log("sds");
+      const test = document.getElementById("test");
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(test);
+      });
       return (
         this.$store.state.decks != null && this.$store.state.decks.length > 0
       );
+    },
+    mounted() {
+      console.log("sds");
+      // const test = document.getElementById("test");
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   renderMathInElement(test);
+      // });
     },
   },
 };
