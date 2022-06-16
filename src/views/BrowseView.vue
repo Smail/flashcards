@@ -14,20 +14,7 @@
         </li>
       </ul>
       <div v-if="currentDeck != null" class="component deck-browser">
-        <template v-if="currentCard != null">
-          <div class="card component">
-            <h4>Front</h4>
-            <textarea>{{ currentCard.front }}</textarea>
-          </div>
-          <div class="card component">
-            <h4>Back</h4>
-            <div id="test">Hallo $x = 1$</div>
-            <textarea id="textarea-back">{{ currentCard.back }}</textarea>
-          </div>
-          <div class="card component">
-            <math-field>f(x) = x + 1</math-field>
-          </div>
-        </template>
+        <flash-card v-if="currentCard != null" :card="currentCard"></flash-card>
         <h4
           v-else-if="
             currentDeck.cards == null || currentDeck.cards.length === 0
@@ -60,9 +47,11 @@
 </template>
 
 <script>
+import FlashCard from "@/components/FlashCard.vue";
+
 export default {
   name: "BrowseView",
-  components: {},
+  components: { FlashCard },
   computed: {
     currentDeck() {
       const decks = this.$store.state.decks;
