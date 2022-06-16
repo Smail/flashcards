@@ -1,13 +1,16 @@
 <template>
   <nav class="component">
-    <router-link
-      v-for="link in links"
-      :to="link.href"
-      class="translate-all-03s"
-      :class="{ 'hover-transform-animation': translateLinkOnHover }"
-    >
-      {{ link.title }}
-    </router-link>
+    <template v-if="links != null">
+      <router-link
+        v-for="link in links"
+        :to="link.href"
+        class="translate-all-03s"
+        :class="{ 'hover-transform-animation': translateLinkOnHover }"
+      >
+        {{ link.title }}
+      </router-link>
+    </template>
+    <slot v-else></slot>
   </nav>
 </template>
 
@@ -17,7 +20,6 @@ export default {
   props: {
     links: {
       type: Array,
-      required: true,
     },
     translateLinkOnHover: {
       type: Boolean,

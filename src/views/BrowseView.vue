@@ -3,17 +3,19 @@
   <div id="browser-wrapper" class="component">
     <!-- Only show the navbar if the user has any decks -->
     <template v-if="hasDecks">
-      <ul id="deck-nav" class="component">
-        <li v-for="deck in this.$store.state.decks">
-          <router-link
-            class="translate-all-03s"
-            :to="{ name: 'browse', params: { id: deck.id } }"
-          >
-            <h4>{{ deck.name }}</h4>
-          </router-link>
-        </li>
-      </ul>
+      <!-- Deck navigation bar -->
+      <nav-bar>
+        <router-link
+          v-for="deck in this.$store.state.decks"
+          class="translate-all-03s"
+          :to="{ name: 'browse', params: { id: deck.id } }"
+        >
+          <h4>{{ deck.name }}</h4>
+        </router-link>
+      </nav-bar>
+      <!-- Display current deck -->
       <div v-if="currentDeck != null" class="component deck-browser">
+        <!-- Display flash card contents -->
         <flash-card v-if="currentCard != null" :card="currentCard"></flash-card>
         <h4
           v-else-if="
@@ -48,10 +50,11 @@
 
 <script>
 import FlashCard from "@/components/FlashCard.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "BrowseView",
-  components: { FlashCard },
+  components: { FlashCard, NavBar },
   computed: {
     currentDeck() {
       const decks = this.$store.state.decks;
