@@ -1,21 +1,16 @@
 <template>
-  <nav class="component">
-    <router-link
-      v-for="nav in navLinks"
-      :to="nav.href"
-      class="translate-all-03s hover-tranform-animation"
-      >{{ nav.title }}
-    </router-link>
-  </nav>
+  <nav-bar :links="navLinks" translateLinkOnHover="true"></nav-bar>
   <div id="content" class="component flex-column-start">
     <router-view />
   </div>
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { NavBar },
   data() {
     return {
       navLinks: [
