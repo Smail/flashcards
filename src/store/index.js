@@ -11,13 +11,39 @@ export default createStore({
         cards: [
           {
             id: 1,
-            front: "This is the front page of a flash card 1",
-            back: "This is the back page of a flash card 1",
+            name: "Name of card",
+            sides: [
+              {
+                name: "Front",
+                content: "This is the front side of a flash card 1",
+              },
+              {
+                name: "Back",
+                content: "This is the back side of a flash card 1",
+              },
+            ],
           },
           {
             id: 2,
-            front: "This is the front page of a flash card 2",
-            back: "This is the back page of a flash card 2",
+            name: "Name of card",
+            sides: [
+              {
+                name: "Front",
+                content: "This is the front side of a flash card 2",
+              },
+              {
+                name: "Back",
+                content: "This is the back side of a flash card 2",
+              },
+              {
+                name: "Side 3",
+                content: "This is the back side of a flash card 2",
+              },
+              {
+                name: "Side 4",
+                content: "This is the back side of a flash card 2",
+              },
+            ],
           },
         ],
       },
