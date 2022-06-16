@@ -38,7 +38,7 @@
       <h4>Oops... You don't have any decks yet 🤷</h4>
       <router-link
         to="/create"
-        class="component translate-all-03s hover-tranform-animation"
+        class="component translate-all-03s hover-transform-animation"
       >
         Create one here
       </router-link>

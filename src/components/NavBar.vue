@@ -4,7 +4,7 @@
       v-for="link in links"
       :to="link.href"
       class="translate-all-03s"
-      :class="{ 'hover-tranform-animation': translateLinkOnHover }"
+      :class="{ 'hover-transform-animation': translateLinkOnHover }"
     >
       {{ link.title }}
     </router-link>

@@ -1,5 +1,5 @@
 <template>
-  <nav-bar :links="navLinks" translateLinkOnHover="true"></nav-bar>
+  <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
   <div id="content" class="component flex-column-start">
     <router-view />
   </div>
@@ -160,7 +160,7 @@ ul {
   transition: all 0.3s ease 0s;
 }
 
-.hover-tranform-animation:hover {
+.hover-transform-animation:hover {
   transform: translateY(-0.25em);
 }
 

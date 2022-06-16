@@ -4,7 +4,7 @@
     <router-link
       v-for="link in links"
       style="flex: 1"
-      class="component translate-all-03s hover-tranform-animation"
+      class="component translate-all-03s hover-transform-animation"
       :to="link.href"
     >
       <h2>{{ link.title }}</h2>
