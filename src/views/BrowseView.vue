@@ -6,26 +6,44 @@
       <!-- Deck navigation bar -->
       <nav-bar>
         <router-link
-          v-for="deck in this.$store.state.decks"
+          v-for="deck in $store.state.decks"
           class="translate-all-03s"
-          :to="{ name: 'browse', params: { id: deck.id } }"
+          :to="{ name: 'browse', params: { deckId: deck.id } }"
         >
           <h4>{{ deck.name }}</h4>
         </router-link>
       </nav-bar>
-      <!-- Display current deck -->
-      <div v-if="currentDeck != null" class="component deck-browser">
-        <!-- Display flash card contents -->
-        <flash-card v-if="currentCard != null" :card="currentCard"></flash-card>
-        <h4
-          v-else-if="
-            currentDeck.cards == null || currentDeck.cards.length === 0
-          "
-        >
-          The selected deck is currently empty. {{ currentDeck.name }}
-        </h4>
-        <h4 v-else>⚠️ Unknown Error.</h4>
-      </div>
+      <!-- Card navigation bar -->
+      <template v-if="currentDeck != null">
+        <nav-bar v-if="this.currentDeck != undefined">
+          <router-link
+            v-for="card in this.currentDeck.cards"
+            class="translate-all-03s"
+            :to="{
+              name: 'browse',
+              params: { deckId: currentDeck.id, cardId: card.id },
+            }"
+          >
+            <h4>{{ card.name }}</h4>
+          </router-link>
+        </nav-bar>
+        <!-- Display current deck -->
+        <div class="component deck-browser">
+          <!-- Display flash card contents -->
+          <flash-card
+            v-if="currentCard != null"
+            :card="currentCard"
+          ></flash-card>
+          <h4
+            v-else-if="
+              currentDeck.cards == null || currentDeck.cards.length === 0
+            "
+          >
+            The selected deck is currently empty. {{ currentDeck.name }}
+          </h4>
+          <h4 v-else>⚠️ Unknown Error.</h4>
+        </div>
+      </template>
     </template>
     <div
       v-else
@@ -58,13 +76,13 @@ export default {
   computed: {
     currentDeck() {
       const decks = this.$store.state.decks;
-      let id = this.$route.params.id;
 
       // Return the deck requested by the route parameter, i.e., URL
       // or the first available deck if no specific deck was requested.
-      if (id != null) {
-        id = Number.parseInt(this.$route.params.id);
-        return decks.find((deck) => deck.id === id);
+      if (this.$route.params.deckId != null) {
+        const deckId = Number.parseInt(this.$route.params.deckId);
+
+        return decks.find((deck) => deck.id === deckId);
       } else {
         // Get first available deck
         if (decks != null && decks.length > 0) {
@@ -72,6 +90,7 @@ export default {
         }
       }
 
+      console.debug("Current deck is null");
       return null;
     },
     currentCard() {
@@ -83,20 +102,20 @@ export default {
       ) {
         return this.currentDeck.cards[0];
       }
+
       return null;
     },
     hasDecks() {
-      console.log("sds");
       const test = document.getElementById("test");
       document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(test);
       });
+
       return (
         this.$store.state.decks != null && this.$store.state.decks.length > 0
       );
     },
     mounted() {
-      console.log("sds");
       // const test = document.getElementById("test");
       // document.addEventListener("DOMContentLoaded", function () {
       //   renderMathInElement(test);
