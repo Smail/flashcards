@@ -11,7 +11,7 @@ export default createStore({
         cards: [
           {
             id: 1,
-            name: "Name of card",
+            name: "Card Name 1",
             sides: [
               {
                 name: "Front",
@@ -25,7 +25,7 @@ export default createStore({
           },
           {
             id: 2,
-            name: "Name of card",
+            name: "Card name 2",
             sides: [
               {
                 name: "Front",
