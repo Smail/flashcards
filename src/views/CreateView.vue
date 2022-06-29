@@ -1,20 +1,23 @@
 <template>
-  <h1>Create</h1>
-  <div class="link-selection">
-    <router-link
-      v-for="link in links"
-      class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
-      :to="link.href"
-    >
-      <h2>{{ link.title }}</h2>
-    </router-link>
-  </div>
+  <main-content title="Create">
+    <div class="link-selection">
+      <router-link
+        v-for="link in links"
+        class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
+        :to="link.href"
+      >
+        <h2>{{ link.title }}</h2>
+      </router-link>
+    </div>
+  </main-content>
 </template>
 
 <script>
+import MainContent from "@/components/MainContent.vue";
+
 export default {
   name: "CreateView",
-  components: {},
+  components: { MainContent },
   data() {
     return {
       links: [

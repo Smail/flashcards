@@ -1,23 +1,26 @@
 <template>
-  <h1>Study</h1>
-  <h4>Select Deck</h4>
-  <ul class="flex flex-col items-start gap-2">
-    <li v-for="deck in this.$store.state.decks">
-      <router-link
-        class="study-deck-link translate-all-03s"
-        :to="{ name: 'study-deck', params: { name: deck.name } }"
-      >
-        <h4>{{ deck.name }}</h4>
-        <h6 class="due-header">Due: 6</h6>
-      </router-link>
-    </li>
-  </ul>
+  <main-content title="Study">
+    <h4>Select Deck</h4>
+    <ul class="flex flex-col items-start gap-2">
+      <li v-for="deck in this.$store.state.decks">
+        <router-link
+          class="study-deck-link translate-all-03s"
+          :to="{ name: 'study-deck', params: { name: deck.name } }"
+        >
+          <h4>{{ deck.name }}</h4>
+          <h6 class="due-header">Due: 6</h6>
+        </router-link>
+      </li>
+    </ul>
+  </main-content>
 </template>
 
 <script>
+import MainContent from "@/components/MainContent.vue";
+
 export default {
   name: "StudyView",
-  components: {},
+  components: { MainContent },
 };
 </script>
 
