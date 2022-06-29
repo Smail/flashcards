@@ -1,5 +1,5 @@
 <template v-if="card != null && card.sides != null">
-  <div v-for="(side, index) in card.sides" class="card component">
+  <div v-for="(side, index) in card.sides" class="card m-2 p-4 rounded-lg">
     <h4>{{ sides[index].name }}</h4>
     <!-- TODO add :key -->
     <textarea

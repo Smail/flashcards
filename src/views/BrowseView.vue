@@ -1,6 +1,6 @@
 <template>
   <h1>Browse</h1>
-  <div id="browser-wrapper" class="component">
+  <div id="browser-wrapper" class="m-2 p-4 rounded-lg">
     <!-- Only show the navbar if the user has any decks -->
     <template v-if="hasDecks">
       <!-- Deck navigation bar -->
@@ -28,7 +28,7 @@
           </router-link>
         </nav-bar>
         <!-- Display current deck -->
-        <div class="component deck-browser">
+        <div class="m-2 p-4 rounded-lg deck-browser">
           <!-- Display flash card contents -->
           <flash-card
             v-if="currentCard != null"
@@ -58,7 +58,7 @@
       <h4>Oops... You don't have any decks yet 🤷</h4>
       <router-link
         to="/create"
-        class="component translate-all-03s hover-transform-animation"
+        class="m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
       >
         Create one here
       </router-link>
@@ -154,11 +154,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-/* Remove double margin */
-.component.card {
-  margin: 0;
 }
 
 textarea {

@@ -1,6 +1,6 @@
 <template>
   <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
-  <div id="content" class="component flex-column-start">
+  <div id="content" class="m-2 p-4 rounded-lg flex-column-start">
     <router-view />
   </div>
 </template>
@@ -77,12 +77,6 @@ body {
   min-height: 100vh;
   color: var(--font-color);
   background-color: var(--background-color);
-}
-
-.component {
-  margin: 0.5em;
-  padding: 1em;
-  border-radius: 0.5em;
 }
 
 #app {

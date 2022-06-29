@@ -1,5 +1,5 @@
 <template>
-  <nav class="component">
+  <nav class="m-2 p-4 rounded-lg">
     <template v-if="links != null">
       <router-link
         v-for="link in links"

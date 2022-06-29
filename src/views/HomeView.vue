@@ -4,7 +4,7 @@
     <li v-for="item in quickSelectionButtons" class="quick-select-btn">
       <router-link
         style="flex: 1"
-        class="component translate-all-03s hover-transform-animation"
+        class="m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
         :to="item.href"
       >
         <h2>{{ item.title }}</h2>
