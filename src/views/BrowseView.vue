@@ -1,10 +1,10 @@
 <template>
   <h1>Browse</h1>
-  <div id="browser-wrapper" class="m-2 p-4 rounded-lg">
+  <div id="browser-wrapper" class="bg-red-500 rounded-lg">
     <!-- Only show the navbar if the user has any decks -->
     <template v-if="hasDecks">
       <!-- Deck navigation bar -->
-      <nav-bar>
+      <nav-bar class="m-0 border-r">
         <router-link
           v-for="deck in $store.state.decks"
           class="translate-all-03s"
@@ -15,7 +15,7 @@
       </nav-bar>
       <!-- Card navigation bar -->
       <template v-if="currentDeck != null">
-        <nav-bar v-if="this.currentDeck != undefined">
+        <nav-bar class="m-0" v-if="this.currentDeck != undefined">
           <router-link
             v-for="card in this.currentDeck.cards"
             class="translate-all-03s"
@@ -37,6 +37,7 @@
           <!-- Display warnings/errors -->
           <!-- Error 1 -->
           <h4
+            class="p-4"
             v-else-if="
               currentDeck.cards == null || currentDeck.cards.length === 0
             "
@@ -44,7 +45,7 @@
             The selected deck is currently empty. {{ currentDeck.name }}
           </h4>
           <!-- Error 2 -->
-          <h4 v-else>⚠️ Unknown Error.</h4>
+          <h4 class="p-4" v-else>⚠️ Unknown Error.</h4>
         </div>
       </template>
     </template>

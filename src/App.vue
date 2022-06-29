@@ -1,5 +1,9 @@
 <template>
-  <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
+  <nav-bar
+    class="bg-secondary m-2 rounded-lg"
+    :links="navLinks"
+    :translateLinkOnHover="true"
+  ></nav-bar>
   <div
     class="bg-secondary flex flex-1 flex-col items-start gap-2 m-2 p-4 rounded-lg"
   >

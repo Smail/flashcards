@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-secondary flex flex-col items-start gap-2 m-2 p-4 rounded-lg">
+  <nav class="flex flex-col items-start gap-2 p-4">
     <template v-if="links != null">
       <router-link
         v-for="link in links"
