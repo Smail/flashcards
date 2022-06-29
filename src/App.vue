@@ -82,13 +82,6 @@ body {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  font-family: Poppins, Helvetica, Arial, sans-serif;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-
-  height: 100vh;
 }
 
 nav.component {
