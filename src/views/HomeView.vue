@@ -3,8 +3,7 @@
   <ul id="quick-selection">
     <li v-for="item in quickSelectionButtons" class="quick-select-btn">
       <router-link
-        style="flex: 1"
-        class="m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
+        class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
         :to="item.href"
       >
         <h2>{{ item.title }}</h2>

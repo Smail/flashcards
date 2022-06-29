@@ -3,8 +3,7 @@
   <div class="link-selection">
     <router-link
       v-for="link in links"
-      style="flex: 1"
-      class="m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
+      class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
       :to="link.href"
     >
       <h2>{{ link.title }}</h2>
