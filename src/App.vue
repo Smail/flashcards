@@ -26,9 +26,6 @@ export default {
 </script>
 
 <style>
-/* TODO GDPR - download font locally */
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 :root {
   /* https://developer.apple.com/design/human-interface-guidelines/foundations/color/#specifications */
   --apple-gray-4-dark: rgb(58, 58, 60);
