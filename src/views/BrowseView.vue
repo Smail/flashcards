@@ -148,14 +148,6 @@ export default {
   gap: 0.5em;
 }
 
-.card {
-  align-self: stretch;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 textarea {
   color: inherit;
   flex: 1;
