@@ -84,13 +84,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-nav.component {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5em;
-}
-
 a {
   text-decoration: none;
   font-weight: bold;
@@ -105,26 +98,12 @@ a:hover {
   color: var(--primary-color);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
 ol,
 ul {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.small-italic-header {
-  font-weight: normal;
-  font-style: italic;
 }
 
 .translate-all-03s {
