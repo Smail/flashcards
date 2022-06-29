@@ -1,5 +1,5 @@
 <template>
-  <h1>Browse</h1>
+  <h1 class="text-3xl font-medium">Browse</h1>
   <div id="browser-wrapper" class="bg-red-500 rounded-lg">
     <!-- Only show the navbar if the user has any decks -->
     <template v-if="hasDecks">
@@ -7,7 +7,7 @@
       <nav-bar class="m-0 border-r">
         <router-link
           v-for="deck in $store.state.decks"
-          class="translate-all-03s"
+          class="translate-all-03s font-medium"
           :to="{ name: 'browse', params: { deckId: deck.id } }"
         >
           <h4>{{ deck.name }}</h4>
@@ -18,7 +18,7 @@
         <nav-bar class="m-0" v-if="this.currentDeck != undefined">
           <router-link
             v-for="card in this.currentDeck.cards"
-            class="translate-all-03s"
+            class="translate-all-03s font-medium"
             :to="{
               name: 'browse',
               params: { deckId: currentDeck.id, cardId: card.id },
