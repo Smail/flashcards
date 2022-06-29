@@ -1,7 +1,7 @@
 <template v-if="card != null && card.sides != null">
   <div
     v-for="(side, index) in card.sides"
-    class="self-stretch flex-1 flex flex-col items-start p-4 rounded-lg"
+    class="bg-secondary self-stretch flex-1 flex flex-col items-start p-4 rounded-lg"
   >
     <h4>{{ sides[index].name }}</h4>
     <!-- TODO add :key -->

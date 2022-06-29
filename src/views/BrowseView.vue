@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-3xl font-medium">Browse</h1>
-  <div id="browser-wrapper" class="bg-red-500 rounded-lg">
+  <div id="browser-wrapper" class="bg-tertiary rounded-lg">
     <!-- Only show the navbar if the user has any decks -->
     <template v-if="hasDecks">
       <!-- Deck navigation bar -->
@@ -13,9 +13,9 @@
           <h4>{{ deck.name }}</h4>
         </router-link>
       </nav-bar>
-      <!-- Card navigation bar -->
       <template v-if="currentDeck != null">
-        <nav-bar class="m-0" v-if="this.currentDeck != undefined">
+        <!-- Card navigation bar -->
+        <nav-bar class="m-0">
           <router-link
             v-for="card in this.currentDeck.cards"
             class="translate-all-03s font-medium"
@@ -27,9 +27,10 @@
             <h4>{{ card.name }}</h4>
           </router-link>
         </nav-bar>
-        <!-- Display flash card sides -->
-        <div class="bg-tertiary flex-1 m-2 rounded-lg deck-browser">
+        <!-- Display current flash card sides -->
+        <div class="flex flex-col items-start gap-2 flex-1 m-2 rounded-lg">
           <flash-card
+            class="bg-tertiary"
             v-if="currentCard != null"
             :card="currentCard"
           ></flash-card>
@@ -79,6 +80,8 @@ export default {
   computed: {
     currentDeck() {
       const decks = this.$store.state.decks;
+
+      console.log();
 
       // Return the deck requested by the route parameter, i.e., URL
       // or the first available deck if no specific deck was requested.
@@ -141,14 +144,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.deck-browser {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5em;
 }
 
 textarea {
