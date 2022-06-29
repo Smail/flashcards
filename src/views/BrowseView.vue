@@ -27,9 +27,8 @@
             <h4>{{ card.name }}</h4>
           </router-link>
         </nav-bar>
-        <!-- Display current deck -->
+        <!-- Display flash card sides -->
         <div class="bg-tertiary flex-1 m-2 rounded-lg deck-browser">
-          <!-- Display flash card contents -->
           <flash-card
             v-if="currentCard != null"
             :card="currentCard"
