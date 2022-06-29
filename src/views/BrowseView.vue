@@ -1,6 +1,9 @@
 <template>
   <main-content title="Browse">
-    <div id="browser-wrapper" class="bg-tertiary rounded-lg">
+    <div
+      id="browser-wrapper"
+      class="bg-tertiary rounded-lg flex flex-1 self-stretch"
+    >
       <!-- Only show the navbar if the user has any decks -->
       <template v-if="hasDecks">
         <!-- Deck navigation bar -->
@@ -134,14 +137,6 @@ export default {
 </script>
 
 <style>
-#browser-wrapper {
-  display: flex;
-  flex: 1;
-  align-self: stretch;
-  padding: 0;
-  margin: 0;
-}
-
 #deck-nav {
   display: flex;
   flex-direction: column;
