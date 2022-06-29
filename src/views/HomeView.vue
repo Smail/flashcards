@@ -2,25 +2,17 @@
   <main-content
     :title="`${this.$store.state.firstName} ${this.$store.state.lastName}`"
   >
-    <ul id="quick-selection">
-      <li v-for="item in quickSelectionButtons" class="quick-select-btn">
-        <router-link
-          class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
-          :to="item.href"
-        >
-          <h2>{{ item.title }}</h2>
-        </router-link>
-      </li>
-    </ul>
+    <button-link-group :links="quickSelectionButtons" />
   </main-content>
 </template>
 
 <script>
 import MainContent from "@/components/MainContent.vue";
+import ButtonLinkGroup from "@/components/ButtonLinkGroup.vue";
 
 export default {
   name: "HomeView",
-  components: { MainContent },
+  components: { MainContent, ButtonLinkGroup },
   data() {
     return {
       quickSelectionButtons: [
@@ -34,19 +26,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#quick-selection {
-  align-self: stretch;
-  justify-content: stretch;
-  align-items: stretch;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.quick-select-btn {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-</style>

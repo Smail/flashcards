@@ -1,23 +1,16 @@
 <template>
   <main-content title="Create">
-    <div class="link-selection">
-      <router-link
-        v-for="link in links"
-        class="bg-tertiary text-center flex-1 m-2 p-4 rounded-lg translate-all-03s hover-transform-animation"
-        :to="link.href"
-      >
-        <h2>{{ link.title }}</h2>
-      </router-link>
-    </div>
+    <button-link-group :links="links" />
   </main-content>
 </template>
 
 <script>
 import MainContent from "@/components/MainContent.vue";
+import ButtonLinkGroup from "@/components/ButtonLinkGroup.vue";
 
 export default {
   name: "CreateView",
-  components: { MainContent },
+  components: { MainContent, ButtonLinkGroup },
   data() {
     return {
       links: [
@@ -28,13 +21,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.link-selection {
-  align-self: stretch;
-  justify-content: stretch;
-  align-items: stretch;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-</style>
