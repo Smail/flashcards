@@ -1,6 +1,8 @@
 <template>
   <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
-  <div class="flex flex-1 flex-col items-start gap-2 m-2 p-4 rounded-lg">
+  <div
+    class="bg-secondary flex flex-1 flex-col items-start gap-2 m-2 p-4 rounded-lg"
+  >
     <router-view />
   </div>
 </template>
