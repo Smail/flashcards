@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl font-medium capitalize">{{ title }}</h1>
+  <h1 class="text-3xl font-medium capitalize mb-4">{{ title }}</h1>
   <slot></slot>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   props: {
     title: {
       type: String,
-      require: true,
+      required: true,
     },
   },
 };
