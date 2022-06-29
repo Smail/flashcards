@@ -28,12 +28,14 @@
           </router-link>
         </nav-bar>
         <!-- Display current deck -->
-        <div class="m-2 p-4 rounded-lg deck-browser">
+        <div class="bg-tertiary flex-1 m-2 rounded-lg deck-browser">
           <!-- Display flash card contents -->
           <flash-card
             v-if="currentCard != null"
             :card="currentCard"
           ></flash-card>
+          <!-- Display warnings/errors -->
+          <!-- Error 1 -->
           <h4
             v-else-if="
               currentDeck.cards == null || currentDeck.cards.length === 0
@@ -41,6 +43,7 @@
           >
             The selected deck is currently empty. {{ currentDeck.name }}
           </h4>
+          <!-- Error 2 -->
           <h4 v-else>⚠️ Unknown Error.</h4>
         </div>
       </template>
