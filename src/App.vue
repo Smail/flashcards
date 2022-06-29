@@ -1,6 +1,6 @@
 <template>
   <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
-  <div id="content" class="m-2 p-4 rounded-lg flex-column-start">
+  <div class="flex flex-1 m-2 p-4 rounded-lg flex-column-start">
     <router-view />
   </div>
 </template>
@@ -89,12 +89,6 @@ body {
   flex-direction: row;
 
   height: 100vh;
-}
-
-/* Use full width on first component, that is not nav, i.e., make nav a slim component. */
-#content {
-  flex: 1;
-  display: flex;
 }
 
 nav.component {
