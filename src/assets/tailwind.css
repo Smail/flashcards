@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg-primary: 255, 130, 255;
+      --bg-secondary: 245, 246, 247;
+      --bg-tertiary: 238, 238, 238;
+      --bg-selection: 238, 238, 238;
+
+      --text-primary: 0, 0, 0;
+      --text-secondary: 56, 63, 74;
+      --text-tertiary: 255, 255, 255;
+    }
+
+    .theme-coffee {
+      --bg-primary: 236, 224, 208;
+      --bg-secondary: 219, 192, 171;
+      --bg-tertiary: 150, 114, 88;
+      --bg-selection: 150, 114, 88;
+
+      --text-primary: 56, 33, 15;
+      --text-secondary: 56, 63, 74;
+      --text-tertiary: 255, 255, 255;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: 0, 0, 0;
+      --bg-secondary: 70, 70, 70;
+      --bg-tertiary: 238, 238, 238;
+      --bg-selection: 238, 238, 238;
+
+      --text-primary: 255 ,255 ,255;
+      --text-secondary: 56, 63, 74;
+      --text-tertiary: 255, 255, 255;
+    }
+
+    .theme-coffee {
+      --bg-primary: 56, 33, 15;
+      --bg-secondary: 99, 73, 50;
+      --bg-tertiary: 150, 114, 88;
+      --bg-selection: 150, 114, 88;
+
+      --text-primary: 255, 255, 255;
+      --text-secondary: 236, 224, 208;
+      --text-tertiary: 219, 192, 171;
+    }
+  }
+}
