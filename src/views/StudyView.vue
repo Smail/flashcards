@@ -1,7 +1,7 @@
 <template>
   <h1>Study</h1>
   <h4>Select Deck</h4>
-  <ul class="flex-column-start">
+  <ul class="flex flex-col items-start gap-2">
     <li v-for="deck in this.$store.state.decks">
       <router-link
         class="study-deck-link translate-all-03s"

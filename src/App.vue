@@ -1,6 +1,6 @@
 <template>
   <nav-bar :links="navLinks" :translateLinkOnHover="true"></nav-bar>
-  <div class="flex flex-1 m-2 p-4 rounded-lg flex-column-start">
+  <div class="flex flex-1 flex-col items-start gap-2 m-2 p-4 rounded-lg">
     <router-view />
   </div>
 </template>
@@ -127,13 +127,6 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.flex-column-start {
-  display: flex;
-  gap: 0.5em;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .small-italic-header {
