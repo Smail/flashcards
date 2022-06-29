@@ -11,6 +11,14 @@
       </router-link>
     </template>
     <slot v-else></slot>
+    <ul class="flex flex-col items-start gap-2">
+      <li><button @click="applyTheme()">Default</button></li>
+      <li v-for="theme in themes">
+        <button @click="applyTheme(theme)" class="capitalize">
+          {{ theme.substring(6) }}
+        </button>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -24,6 +32,26 @@ export default {
     translateLinkOnHover: {
       type: Boolean,
       default: false,
+    },
+  },
+  data() {
+    return {
+      themes: ["theme-coffee", "theme-neon"],
+    };
+  },
+  methods: {
+    applyTheme(theme) {
+      console.debug("Change to theme: " + theme);
+
+      const app = document.getElementById("app");
+
+      for (const theme of this.themes) {
+        app.classList.remove(theme);
+      }
+
+      if (theme != null) {
+        app.classList.add(theme);
+      }
     },
   },
 };
